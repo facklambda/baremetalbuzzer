@@ -1,0 +1,15 @@
+[package]
+name = "baremetalbuzzer"
+version = "0.1.0"
+authors = ["fack <null>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+esp32c3-hal = { package = "esp32c3-hal", git = "https://github.com/esp-rs/esp-hal.git" }
+esp-backtrace = { git = "https://github.com/esp-rs/esp-backtrace", features = ["esp32c3", "panic-handler", "print-uart"] }
+riscv-rt = { version = "0.8", optional = true }
+
+[features]
+default = ["rt"]
+rt = ["riscv-rt"]
